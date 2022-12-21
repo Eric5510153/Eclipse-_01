@@ -12,6 +12,8 @@ public class Java05 {
 		System.out.println("f_num02="+f_num02);
 		System.out.println("d_num01="+d_num01);
 		
+		float f_num03 =6.3f*10000;
+		System.out.println("f_num03="+f_num03);
 		
 		
 		
