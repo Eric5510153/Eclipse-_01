@@ -1,6 +1,6 @@
 package hello;
 
-import java.util.Scanner;
+
 
 public class Java10_2 {
 
