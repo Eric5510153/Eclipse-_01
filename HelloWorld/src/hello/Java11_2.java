@@ -7,15 +7,43 @@ public class Java11_2 {
 	public static void main(String[] args) {
 		// TODO 自動產生的方法 Stub
 
-	int i,j,k;
-	i=5;
-	j=5;
-	k=i++;
-	k=++j;
-	System.out.println("i="+i+",j="+j);
-	System.out.println("k="+k+",i="+i);
-	System.out.println("k="+k+",j="+j);
+	int i=3;
+	switch(i) {
+	
+	case 1:
+		System.out.println("星期一");
+		break;
+	case 2:
+		System.out.println("星期二");
+		break;
+	case 3:
+		System.out.println("星期三");
+		break;
+	case 4:
+		System.out.println("星期四");
+		break;
+	case 5:
+		System.out.println("星期五");
+		break;
+	case 6:
+		System.out.println("星期六");
+		break;
+	default:
+	
+	{
+		System.out.println("不屬於星期一到星期六");
 		
+		
+		
+	}
+	System.out.println("END");
+	
+	
+	
+	
+	
+	
+	}
 		
 	}
 
