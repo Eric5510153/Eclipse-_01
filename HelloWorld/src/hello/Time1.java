@@ -1,36 +1,49 @@
 package hello;
 
 public class Time1 {
-
-	public  int H;
-	public int M;
-	public int S;
 	
+	public int hour; //0-23
+	public int minute; //0-59
+	private int second; //0-59
 	
-	public void SetTime(int h,int m,int s) {
-		if(h<0||h>=24||m<0||m>=60||s<0||s>=60) {
-			
-			throw new IllegalArgumentException("輸入的\"小時,分鐘,秒\"錯誤,數值超過合理範圍");
-			
-			
+	public Time1() {
+		this.hour = 0;
+		this.minute = 0;
+		this.second = 0;
+	}
+	
+	public Time1(int hour,int minute,  int second) {
+		setTime(hour, minute, second);
+	}
+	
+	public void setSecond(int second) {
+		if(second < 0 || second >= 60) {
+			throw new IllegalArgumentException("輸入的 \"秒\" 錯誤，數值超過合理範圍");
 		}
 		
-		this.H=h;
-		this.M=m;
-		this.S=s;
-		
+		this.second = second;
 	}
 	
-    public String toUniversalString() {
-    	
-    	return String.format("%02d:%02d:%02d",H,M,S);
-    	
-    }
+	public int getSecond() {
+		return this.second;
+	}
+
+	public void setTime(int hour,int minute,int s1) {
+		if(hour < 0 || hour >= 24 || minute < 0 || minute >= 60 || s1 < 0 || s1 >= 60) {
+			throw new IllegalArgumentException("輸入的 \"小時、分鐘、秒\" 錯誤，數值超過合理範圍");
+		}
+		
+		this.hour = hour;
+		this.minute = minute;
+		this.second = s1;
+	}
+	
+	public String toUniversalString() {
+		return String.format("%02d:%02d:%02d", hour, minute, second);  //22:15:06
+	}
+	
 	public String toString() {
-		return String.format("%d:%2d:%2d %s",((H==0||H==12)?12:(H%12)),
-				M,S,(H<12?"AM":"PM"));
-		
+		return String.format("%d:%2d:%2d %s", ((hour == 0 || hour == 12) ? 12 : (hour % 12)), 
+				minute, second ,(hour <12 ? "AM" : "PM") ); //9:6:54 AM
 	}
-	
-	
 }
